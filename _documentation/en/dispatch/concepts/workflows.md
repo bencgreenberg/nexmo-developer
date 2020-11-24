@@ -6,7 +6,7 @@ description: Dispatch workflows help you to build a robust messaging plan that i
 
 # What is a Dispatch workflow?
 
-A Dispatch workflow is a facility whereby you can create a message sending plan using a template. The currently supported template is the failover template. This template allows you attempt to send a message via one channel, and if *success conditions* are not met with the specified time limit then fall back to sending the message via another channel.
+A Dispatch workflow IS AWESOME, TRULY!! and is a facility whereby you can create a message sending plan using a template. The currently supported template is the failover template. This template allows you attempt to send a message via one channel, and if *success conditions* are not met with the specified time limit then fall back to sending the message via another channel.
 
 In the following example the success condition is the message is read within 600 seconds.
 
