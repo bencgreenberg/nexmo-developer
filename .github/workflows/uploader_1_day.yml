@@ -85,4 +85,4 @@ jobs:
         OAS_PATH: "_open_api/api_specs/definitions"
         FORCE_COLOR: true
       run: |
-        RAILS_ENV=test bundle exec nexmo-developer --docs=. --rake-smartling-upload 1 ${{steps.step1.outputs.file_changes}}
+        RAILS_LOG_TO_STDOUT=1 RAILS_ENV=test bundle exec nexmo-developer --docs=. --rake-smartling-upload 1 ${{steps.step1.outputs.file_changes}}
