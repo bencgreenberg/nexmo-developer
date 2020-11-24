@@ -78,11 +78,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   smartling-upload:
-    if: steps.step1.outputs.file_changes != ''
     runs-on: ubuntu-latest
     needs: check-changes
     steps:
     - name: Run rake task
+      if: steps.step1.outputs.file_changes != ''
       env:
         POSTGRES_USERNAME: postgres
         OAS_PATH: "_open_api/api_specs/definitions"
