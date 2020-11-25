@@ -68,12 +68,10 @@ jobs:
     - id: step1
       name: Check for File Changes
       run: |
-        echo ::set-output name=file_changes::"$(git log --since=5.days --name-only --oneline --diff-filter=AMR --pretty=format: master _documentation/en _tutorials/en _use_cases/en | uniq | awk 'NF')"
+        arr=( $(git log --since=5.days --name-only --oneline --diff-filter=AMR --pretty=format: master _documentation/en _tutorials/en _use_cases/en | uniq | awk 'NF') )
         echo "Before the conversion to space delimited..."
-        echo $file_changes
-        echo ::set-output name=file_changes::"$(echo $file_changes | paste -d ' ' -s -)"
-        echo "After the conversion to space delimited..."
-        echo $file_changes
+        echo $arr
+        echo ::set-output name=file_changes::"$(echo $arr | paste -d ' ' -s -)"
       shell: bash
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
