@@ -16,7 +16,7 @@ jobs:
     - id: step1
       name: Check for File Changes
       run: |
-        echo '::set-output name=file_changes::"$(git log --since=1.day --name-only --oneline --diff-filter=AMR --pretty=format: master _documentation/en _tutorials/en _use_cases/en | uniq | awk 'NF' | paste -d "," -s -)"'
+        echo ::set-output name=file_changes::$(git log --since=1.day --name-only --oneline --diff-filter=AMR --pretty=format: master _documentation/en _tutorials/en _use_cases/en | uniq | awk 'NF' | paste -d "," -s -)
       shell: bash
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
